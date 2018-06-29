@@ -1,16 +1,15 @@
 #!bin/bash
 
 valuex=$(git rev-parse HEAD)
-cd ../../erikTesting2/mainProjekt/submodule
-valuey=$(git rev-parse HEAD) #hum locations????
-cd ../../../eriktesting/submodule
+valuey=$(git rev-parse master) #hum locations????
 
-echo "this commit"
-echo "$valuex"
-echo "Main commit"
-echo "$valuey"
+#echo "this commit"
+#echo "$valuex"
+#echo "Main commit"
+#echo "$valuey"
 if [ $valuex != $valuey ] ;then
 	echo "warning this submodule is not on the same branch as the Main"
+	echo "$(git log ^$valuey $valuex)"
 fi
 
-echo "end of script"
+#echo "end of script"
